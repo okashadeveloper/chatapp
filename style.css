@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000; /* Pure Black Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    margin-top: 120px;
+}
+
+h2 {
+    font-weight: bold;
+    margin: 0;
+    color: #ff0000; /* Blood Red */
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+    color: #ffffff;
+}
+
+a {
+    color: #ffd700; /* Golden Link */
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.form-box form {
+    background-color: #0a0a0a; /* Darker Black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.form-box input {
+    background-color: #111; 
+    border: 2px solid #ff0000; /* Red Border */
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes neon-glow {
+    0% { box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; }
+    50% { box-shadow: 0 0 15px #ffd700, 0 0 25px #ff0000; } /* Golden Glow mix */
+    100% { box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; }
+}
+
+.form-box input:focus {
+    outline: none;
+    border-color: #ffd700; /* Golden Border on Focus */
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #ff0000; 
+    background-color: #ff0000; /* Red Button */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.ghost {
+    background-color: transparent;
+    border-color: #ffd700; /* Golden Ghost Button */
+    color: #ffd700;
+}
+
+.main-box {
+    background-color: #0a0a0a;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(255,0,0,0.25), 
+                0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    border: 1px solid #333;
+}
+
+.form-box {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.login-box {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.register-box {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.slider-box {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.slider-bg {
+    background: linear-gradient(to right, #8b0000, #000000); /* Dark Red to Black */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #ffffff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.slider-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.slider-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.slider-left {
+    transform: translateX(-20%);
+}
+
+.main-box.slider-active .login-box {
+    transform: translateX(100%);
+}
+
+.main-box.slider-active .register-box {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.main-box.slider-active .slider-box {
+    transform: translateX(-100%);
+}
+
+.main-box.slider-active .slider-bg {
+    transform: translateX(50%);
+}
+
+.main-box.slider-active .slider-left {
+    transform: translateX(0);
+}
+
+.main-box.slider-active .slider-right {
+    transform: translateX(20%);
+}
+
+#clearData, #removeUser {
+    background-color: #333; 
+    border-color: #ff0000;
+    color: #ff0000;
+    margin-top: 20px;
+}
+
+#clearData:hover, #removeUser:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+/* ----------------------------------------------------------- */
+/* --- Chat Section Styles (Starting after line 236) --- */
+/* ----------------------------------------------------------- */
+
+#chatSection {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    width: 100%;
+    height: 100vh;
+    max-width: 100vw;
+    background: #0a0a0a;
+    border: 1px solid #ff0000;
+    border-radius: 20px; /* Full screen ke liye corners zero kar diye */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: none;
+    margin: 0;
+}
+.chat-header {
+    background: #111;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff0000;
+}
+
+.chat-header h3 {
+    color: #ffd700;
+    margin: 0;
+    font-size: 18px;
+}
+
+#chatLogoutBtn {
+    padding: 8px 15px;
+    background: transparent;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    font-size: 10px;
+    margin: 0;
+}
+
+.messages-area {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+}
+
+.msg {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.sent {
+    align-self: flex-end;
+    background: #ff0000;
+    color: #fff;
+    border-bottom-right-radius: 2px;
+}
+
+.received {
+    align-self: flex-start;
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #ffd700;
+    border-bottom-left-radius: 2px;
+}
+
+.input-area {
+    padding: 15px;
+    background: #111;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #333;
+}
+
+#messageInput {
+    flex: 1;
+    background: #000;
+    border: 1px solid #ff0000;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 25px;
+}
+
+#messageInput:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+#sendBtn {
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 25px;
+}

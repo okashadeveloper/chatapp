@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signin--Signup Form</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="main-box" id="mainBox">
+
+    <div class="form-box register-box">
+      <form id="signUpForm">
+
+        <h2>Create Account</h2>
+
+        <input type="text" id="signUpUsername" placeholder="Username" required />
+
+        <input type="text" id="signUpContact" placeholder="Email or Phone" autocomplete="off" required />
+
+        <input type="password" id="signUpPassword" placeholder="Password" required />
+
+        <button type="submit">
+          Sign Up
+        </button>
+
+      </form>
+    </div>
+
+    <div class="form-box login-box">
+      <form id="signInForm">
+
+        <h2>Sign in</h2>
+        <input type="text" id="signInContact" placeholder="Email or Phone" autocomplete="off" required />
+
+        <input type="password" id="signInPassword" placeholder="Password" required />
+
+        <a href="#">Forgot your password?</a>
+
+        <button type="submit">
+          Sign In
+        </button>
+
+        <button type="button" id="removeUser">
+          Logout
+        </button>
+
+      </form>
+    </div>
+
+    <div class="slider-box">
+      <div class="slider-bg">
+
+        <div class="slider-panel slider-left">
+          <h1>Welcome Back!</h1>
+          <p>Login with your info</p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+
+        <div class="slider-panel slider-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signUp">Sign Up</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div id="chatSection" style="display: none;">
+    <div class="chat-container">
+      <div class="chat-header">
+        <h3 id="displayUserName">Chat Room</h3>
+        <button id="chatLogoutBtn">Sign Out</button>
+      </div>
+      
+      <div id="messagesBox" class="messages-area">
+        </div>
+
+      <form id="messageForm" class="input-area">
+        <input type="text" id="messageInput" placeholder="Write a message..." autocomplete="off">
+        <button type="submit" id="sendBtn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="recaptcha-container"></div>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
