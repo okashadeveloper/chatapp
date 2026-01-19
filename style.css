@@ -1,354 +1,1036 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+
+
+/* --- Reset & Base Styles --- */
+
 * {
+
     box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
 }
+
+
 
 body {
-    background: #000000; /* Pure Black Background */
+
+    background: #000000;
+    /* Pure Black Background */
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     flex-direction: column;
+
     font-family: 'Montserrat', sans-serif;
-    height: 100%;
-    margin-top: 120px;
+
+    height: 100vh;
+
+    overflow: hidden;
+
 }
+
+
+
+/* --- Typography --- */
 
 h2 {
+
     font-weight: bold;
+
     margin: 0;
-    color: #ff0000; /* Blood Red */
+
+    color: #ff0000;
+    /* Blood Red */
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
 }
+
+
+
+h1 {
+
+    font-weight: bold;
+
+    margin: 0;
+
+    color: #ffffff;
+
+}
+
+
 
 p {
+
     font-size: 14px;
-    font-weight: 100;
+
+    font-weight: 300;
+
     line-height: 20px;
+
     letter-spacing: 0.5px;
+
     margin: 20px 0 30px;
-    color: #ffffff;
+
+    color: #cccccc;
+
 }
+
+
 
 a {
-    color: #ffd700; /* Golden Link */
+
+    color: #ffd700;
+    /* Golden Link */
+
     font-size: 14px;
+
     text-decoration: none;
+
     margin: 15px 0;
+
+    transition: color 0.3s ease;
+
 }
+
+
+
+a:hover {
+
+    color: #ff0000;
+
+}
+
+
+
+/* --- Form Box Styles --- */
 
 .form-box form {
-    background-color: #0a0a0a; /* Darker Black */
+
+    background-color: #0a0a0a;
+    /* Darker Black */
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     flex-direction: column;
+
     padding: 0 50px;
+
     height: 100%;
+
     text-align: center;
+
 }
+
+
 
 .form-box input {
-    background-color: #111; 
-    border: 2px solid #ff0000; /* Red Border */
+
+    background-color: #111;
+
+    border: 2px solid #ff0000;
+    /* Red Border */
+
     padding: 12px 15px;
+
     margin: 8px 0;
+
     width: 100%;
+
     color: #fff;
+
     font-size: 14px;
-    border-radius: 5px;
+
+    border-radius: 8px;
+
     position: relative;
-    transition: all 0.3s ease-in-out;
+
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
 }
+
+
+
+/* --- Animations --- */
 
 @keyframes neon-glow {
-    0% { box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; }
-    50% { box-shadow: 0 0 15px #ffd700, 0 0 25px #ff0000; } /* Golden Glow mix */
-    100% { box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; }
+
+    0% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        border-color: #ff0000;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #ffd700, 0 0 30px #ff0000;
+        border-color: #ffd700;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        border-color: #ff0000;
+    }
+
 }
+
+
+
+@keyframes typing-bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
 
 .form-box input:focus {
+
     outline: none;
-    border-color: #ffd700; /* Golden Border on Focus */
-    animation: neon-glow 1.5s infinite alternate;
+
+    border-color: #ffd700;
+    /* Golden Border on Focus */
+
+    animation: neon-glow 2s infinite alternate;
+
+    background-color: #000;
+
 }
+
+
+
+/* --- Buttons --- */
 
 button {
-    border-radius: 20px;
-    border: 1px solid #ff0000; 
-    background-color: #ff0000; /* Red Button */
+
+    border-radius: 25px;
+
+    border: 1px solid #ff0000;
+
+    background-color: #ff0000;
+    /* Red Button */
+
     color: #ffffff;
-    font-size: 12px;
+
+    font-size: 13px;
+
     font-weight: bold;
+
     padding: 12px 45px;
-    letter-spacing: 1px;
+
+    letter-spacing: 1.5px;
+
     text-transform: uppercase;
-    transition: transform 80ms ease-in;
-    margin-top: 10px;
+
+    transition: all 0.3s ease;
+
+    margin-top: 15px;
+
     cursor: pointer;
+
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+
 }
+
+
+
+button:hover {
+
+    background-color: #cc0000;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
+
+}
+
+
 
 button:active {
+
     transform: scale(0.95);
+
 }
 
-button:focus {
-    outline: none;
-}
+
 
 button.ghost {
+
     background-color: transparent;
-    border-color: #ffd700; /* Golden Ghost Button */
+
+    border-color: #ffd700;
+    /* Golden Ghost Button */
+
     color: #ffd700;
+
+    box-shadow: none;
+
 }
+
+
+
+button.ghost:hover {
+
+    background-color: #ffd700;
+
+    color: #000;
+
+}
+
+
+
+/* --- Layout Containers --- */
 
 .main-box {
+
     background-color: #0a0a0a;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(255,0,0,0.25), 
-                0 10px 10px rgba(0,0,0,0.22);
+
+    border-radius: 15px;
+
+    box-shadow: 0 14px 28px rgba(255, 0, 0, 0.3),
+
+        0 10px 10px rgba(0, 0, 0, 0.5);
+
     position: relative;
+
     overflow: hidden;
-    width: 768px;
+
+    width: 800px;
+
     max-width: 100%;
-    min-height: 480px;
+
+    min-height: 500px;
+
     border: 1px solid #333;
+
 }
+
+
 
 .form-box {
+
     position: absolute;
+
     top: 0;
+
     height: 100%;
+
     transition: all 0.6s ease-in-out;
+
 }
+
+
 
 .login-box {
+
     left: 0;
+
     width: 50%;
+
     z-index: 2;
+
 }
+
+
 
 .register-box {
+
     left: 0;
+
     width: 50%;
+
     opacity: 0;
+
     z-index: 1;
+
 }
+
+
 
 .slider-box {
+
     position: absolute;
+
     top: 0;
+
     left: 50%;
+
     width: 50%;
+
     height: 100%;
+
     overflow: hidden;
+
     transition: transform 0.6s ease-in-out;
+
     z-index: 100;
+
 }
+
+
 
 .slider-bg {
-    background: linear-gradient(to right, #8b0000, #000000); /* Dark Red to Black */
+
+    background: linear-gradient(135deg, #8b0000 0%, #000000 100%);
+
     background-repeat: no-repeat;
+
     background-size: cover;
+
     background-position: 0 0;
+
     color: #ffffff;
+
     position: relative;
+
     left: -100%;
+
     height: 100%;
+
     width: 200%;
+
     transform: translateX(0);
+
     transition: transform 0.6s ease-in-out;
+
 }
+
+
 
 .slider-panel {
+
     position: absolute;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     flex-direction: column;
+
     padding: 0 40px;
+
     text-align: center;
+
     top: 0;
+
     height: 100%;
+
     width: 50%;
+
     transform: translateX(0);
+
     transition: transform 0.6s ease-in-out;
+
 }
+
+
 
 .slider-right {
+
     right: 0;
+
     transform: translateX(0);
+
 }
+
+
 
 .slider-left {
+
     transform: translateX(-20%);
+
 }
+
+
+
+/* --- Slider Animation Logic --- */
 
 .main-box.slider-active .login-box {
+
     transform: translateX(100%);
+
 }
+
+
 
 .main-box.slider-active .register-box {
+
     transform: translateX(100%);
+
     opacity: 1;
+
     z-index: 5;
+
     animation: show 0.6s;
+
 }
 
+
+
 @keyframes show {
-    0%, 49.99% {
+
+    0%,
+    49.99% {
         opacity: 0;
         z-index: 1;
     }
-    50%, 100% {
+
+    50%,
+    100% {
         opacity: 1;
         z-index: 5;
     }
+
 }
+
+
 
 .main-box.slider-active .slider-box {
+
     transform: translateX(-100%);
+
 }
+
+
 
 .main-box.slider-active .slider-bg {
+
     transform: translateX(50%);
+
 }
+
+
 
 .main-box.slider-active .slider-left {
+
     transform: translateX(0);
+
 }
+
+
 
 .main-box.slider-active .slider-right {
+
     transform: translateX(20%);
+
 }
 
-#clearData, #removeUser {
-    background-color: #333; 
-    border-color: #ff0000;
-    color: #ff0000;
-    margin-top: 20px;
+
+
+/* --- Utility Buttons --- */
+
+#removeUser {
+
+    background-color: #222;
+
+    border-color: #444;
+
+    color: #999;
+
+    margin-top: 25px;
+
+    padding: 10px 30px;
+
 }
 
-#clearData:hover, #removeUser:hover {
+
+
+#removeUser:hover {
+
     background-color: #ff0000;
+
     color: #fff;
+
+    border-color: #ff0000;
+
 }
 
-/* ----------------------------------------------------------- */
-/* --- Chat Section Styles (Starting after line 236) --- */
-/* ----------------------------------------------------------- */
+
+
+/* --- Chat Section Core --- */
 
 #chatSection {
+
     width: 100vw;
+
     height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     background: #000;
+
     z-index: 1000;
-    margin: 0;
-    padding: 0;
+
 }
+
+
 
 .chat-container {
+
     width: 100%;
+
     height: 100vh;
-    max-width: 100vw;
-    background: #0a0a0a;
-    border: 1px solid #ff0000;
-    border-radius: 20px; /* Full screen ke liye corners zero kar diye */
+
+    background: #050505;
+
+    border-left: 1px solid #1a1a1a;
+
+    border-right: 1px solid #1a1a1a;
+
     display: flex;
+
     flex-direction: column;
+
     overflow: hidden;
-    box-shadow: none;
-    margin: 0;
+
 }
+
+
+
+/* --- Chat Header Styling --- */
+
 .chat-header {
-    background: #111;
-    padding: 15px;
+
+    background: #0f0f0f;
+
+    padding: 20px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    border-bottom: 2px solid #ff0000;
+
+    border-bottom: 1px solid #ff0000;
+
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
+
 }
+
+
 
 .chat-header h3 {
+
     color: #ffd700;
+
     margin: 0;
-    font-size: 18px;
+
+    font-size: 22px;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    font-weight: 800;
+
 }
+
+
 
 #chatLogoutBtn {
-    padding: 8px 15px;
+
+    padding: 10px 20px;
+
     background: transparent;
-    border: 1px solid #ffd700;
-    color: #ffd700;
-    font-size: 10px;
+
+    border: 2px solid #ff0000;
+
+    color: #ff0000;
+
+    font-size: 11px;
+
     margin: 0;
+
+    border-radius: 5px;
+
 }
+
+
+
+#chatLogoutBtn:hover {
+
+    background: #ff0000;
+
+    color: #fff;
+
+}
+
+
+
+/* --- Messages Area --- */
 
 .messages-area {
+
     flex: 1;
-    padding: 20px;
+
+    padding: 25px;
+
     overflow-y: auto;
+
     display: flex;
+
     flex-direction: column;
-    gap: 15px;
-    background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+
+    gap: 18px;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+
+        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #ff0000 #000;
+
 }
+
+
+
+.messages-area::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+
+.messages-area::-webkit-scrollbar-thumb {
+
+    background-color: #ff0000;
+
+    border-radius: 10px;
+
+}
+
+
+
+/* --- Message Bubbles --- */
 
 .msg {
-    max-width: 75%;
-    padding: 10px 15px;
-    border-radius: 15px;
-    font-size: 14px;
-    line-height: 1.4;
+
+    max-width: 70%;
+
+    padding: 12px 18px;
+
+    border-radius: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
     position: relative;
+
     word-wrap: break-word;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    transition: all 0.3s ease;
+
 }
+
+
+
+.msg:hover {
+
+    transform: scale(1.01);
+
+}
+
+
 
 .sent {
+
     align-self: flex-end;
-    background: #ff0000;
+
+    background: linear-gradient(45deg, #ff0000, #b30000);
+
     color: #fff;
+
     border-bottom-right-radius: 2px;
+
 }
+
+
 
 .received {
+
     align-self: flex-start;
+
     background: #1a1a1a;
-    color: #fff;
-    border: 1px solid #ffd700;
+
+    color: #eee;
+
+    border: 1px solid #333;
+
     border-bottom-left-radius: 2px;
+
 }
+
+
+
+.msg small {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    letter-spacing: 0.5px;
+
+    opacity: 0.9;
+
+}
+
+
+
+/* --- Typing Indicator Animation --- */
+
+.typing-status {
+
+    background: #000;
+
+    border-top: 1px solid #111;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+
+.typing-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    background: #ffd700;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    animation: typing-bounce 1.4s infinite ease-in-out both;
+
+}
+
+
+
+.typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+
+
+/* --- Input Area --- */
 
 .input-area {
-    padding: 15px;
-    background: #111;
+
+    padding: 20px 30px;
+
+    background: #0f0f0f;
+
     display: flex;
-    gap: 10px;
-    border-top: 1px solid #333;
+
+    gap: 15px;
+
+    border-top: 2px solid #1a1a1a;
+
+    align-items: center;
+
 }
+
+
 
 #messageInput {
+
     flex: 1;
-    background: #000;
-    border: 1px solid #ff0000;
-    padding: 10px 15px;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    padding: 14px 20px;
+
     color: #fff;
-    border-radius: 25px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    transition: border 0.3s;
+
 }
+
+
 
 #messageInput:focus {
+
     outline: none;
-    border-color: #ffd700;
+
+    border-color: #ff0000;
+
 }
 
+
+
 #sendBtn {
+
     margin: 0;
-    padding: 10px 20px;
-    border-radius: 25px;
+
+    padding: 12px 30px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    background: #ff0000;
+
+}
+
+
+
+/* --- Edit/Delete Hover Icons Styling --- */
+
+.action-icons-container {
+
+    transition: opacity 0.2s ease-in-out;
+
+}
+
+/* ========================================== */
+/* --- MOBILE RESPONSIVE MEDIA QUERIES --- */
+/* ========================================== */
+
+@media (max-width: 768px) {
+    /* Main Box adjustment */
+    .main-box {
+        width: 95%;
+        min-height: 550px;
+    }
+
+    /* Slider ko mobile par hide kar rahe hain taake form nazar aaye */
+    .slider-box {
+        display: none !important;
+    }
+
+    /* Login aur Register boxes ko full width karna */
+    .login-box, .register-box {
+        width: 100% !important;
+        position: absolute;
+        left: 0;
+    }
+
+    /* Form padding kam karna mobile ke liye */
+    .form-box form {
+        padding: 0 25px;
+    }
+
+    /* Slider logic adjustments for mobile */
+    .main-box:not(.slider-active) .register-box {
+        display: none;
+    }
+
+    .main-box.slider-active .login-box {
+        display: none;
+    }
+
+    .main-box.slider-active .register-box {
+        transform: none !important;
+        opacity: 1;
+        z-index: 5;
+    }
+
+    /* Chat Section Header */
+    .chat-header {
+        padding: 15px 10px;
+    }
+
+    .chat-header h3 {
+        font-size: 16px;
+    }
+
+    /* Messages area padding */
+    .messages-area {
+        padding: 15px;
+    }
+
+    /* Message bubbles width */
+    .msg {
+        max-width: 85%;
+        font-size: 14px;
+    }
+
+    /* Chat Input Area */
+    .input-area {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    #messageInput {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    #sendBtn {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+
+    .chat-header h3 {
+        font-size: 14px;
+    }
+
+    #chatLogoutBtn {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
 }

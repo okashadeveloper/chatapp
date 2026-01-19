@@ -24,7 +24,8 @@ import {
     deleteDoc,
     doc,
     where,
-    limit
+    limit,
+    setDoc
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -62,5 +63,6 @@ export {
     deleteDoc,
     doc,
     where,
-    limit
+    limit,
+    setDoc
 };
