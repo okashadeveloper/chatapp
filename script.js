@@ -28,9 +28,7 @@ import {
     updateProfile
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-// ==========================================
-// --- GLOBAL DOM ELEMENTS ---
-// ==========================================
+
 console.log("Initializing Okasha ChatApp...");
 
 const signUpButton = document.getElementById('signUp');
@@ -93,11 +91,11 @@ onAuthStateChanged(auth, async (user) => {
         if(chatSection) chatSection.style.display = "flex";
         
         const userName = user.displayName || user.email || user.phoneNumber;
-       // Is line ko replace kar dein
+      
 userDisplay.innerHTML = `꧁♡𝑜𝓀𝒶𝓈𝒽𝒶 𝒸𝒽𝒶𝓉𝒶𝓅𝓅 ♡꧂`;
 
         Swal.fire({
-            title: 'Welcome Back!',
+            title: 'Welcome',
             text: `Glad to see you again in ♡𝑜𝓀𝒶𝓈𝒽𝒶 𝒸𝒽𝒶𝓉𝒶𝓅𝓅 ♡`,
             icon: 'success',
             background: '#0a0a0a',

@@ -622,6 +622,7 @@ button.ghost:hover {
 /* --- Chat Header Styling --- */
 
 .chat-header {
+     
 
     background: #0f0f0f;
 
@@ -639,20 +640,13 @@ button.ghost:hover {
 
 }
 
-
-
 .chat-header h3 {
-
+    margin-left: 570px;
+    text-align: center;
     color: #ffd700;
-
-    margin: 0;
-
     font-size: 22px;
-
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
     font-weight: 800;
-
 }
 
 
@@ -941,7 +935,7 @@ button.ghost:hover {
 /* --- MOBILE RESPONSIVE MEDIA QUERIES --- */
 /* ========================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     /* Main Box adjustment */
     .main-box {
         width: 95%;
@@ -986,6 +980,7 @@ button.ghost:hover {
     }
 
     .chat-header h3 {
+        margin: 0%;
         font-size: 16px;
     }
 
